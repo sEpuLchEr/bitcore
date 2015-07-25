@@ -3,6 +3,7 @@ var bignum = require('bignum');
 var Binary = require('binary');
 var Put = require('bufferput');
 var buffertools = require('buffertools');
+var node_scrypt = require('scryptsy').scrypt;
 var sjcl = require('../lib/sjcl');
 if (process.browser) {
   var hashjs = require('hash.js');
@@ -40,9 +41,6 @@ var sha512hmac = exports.sha512hmac = function(data, key) {
 };
 
 var ripe160 = exports.ripe160 = function(data) {
-  if (!Buffer.isBuffer(data)) {
-    throw new Error('arg should be a buffer');
-  }
   if (process.browser) {
     return new Buffer(hashjs.ripemd160().update(data).digest());
   }
@@ -59,6 +57,11 @@ var twoSha256 = exports.twoSha256 = function(data) {
 
 var sha256ripe160 = exports.sha256ripe160 = function(data) {
   return ripe160(sha256(data));
+};
+
+var scrypt = exports.scrypt = function(data) {
+  // scrypt(passwd, salt, N, r, p, dkLen)
+  return node_scrypt(data, data, 1024, 1, 1, 32);
 };
 
 /**

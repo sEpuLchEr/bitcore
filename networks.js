@@ -6,31 +6,31 @@ var hex = function(hex) {
 
 exports.livenet = {
   name: 'livenet',
-  magic: hex('f9beb4d9'),
-  addressVersion: 0x00,
-  privKeyVersion: 128,
-  P2SHVersion: 5,
+  magic: hex('70352205'),
+  addressVersion: 0x19,
+  privKeyVersion: 153,
+  P2SHVersion: 85,
   hkeyPublicVersion: 0x0488b21e,
   hkeyPrivateVersion: 0x0488ade4,
   genesisBlock: {
-    hash: hex('6FE28C0AB6F1B372C1A6A246AE63F74F931E8365E15A089C68D6190000000000'),
-    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+    hash: hex('000001FAEF25DEC4FBCF906E6242621DF2C183BF232F263D0BA5B101911E4563'),
+    merkle_root: hex('12630D16A97F24B287C8C2594DDA5FB98C9E6C70FC61D44191931EA2AA08DC90'),
     height: 0,
-    nonce: 2083236893,
+    nonce: 164482,
     version: 1,
     prev_hash: buffertools.fill(new Buffer(32), 0),
-    timestamp: 1231006505,
-    bits: 486604799,
+    timestamp: 1393221600,
+    bits: 504365055,
   },
   dnsSeeds: [
-    'seed.bitcoin.sipa.be',
-    'dnsseed.bluematt.me',
-    'dnsseed.bitcoin.dashjr.org',
-    'seed.bitcoinstats.com',
-    'seed.bitnodes.io',
-    'bitseed.xf2.org'
+    'rat4.blackcoin.co',
+	'seed.blackcoin.co',
+	'archon.darkfox.id.au',
+	'foxy.seeds.darkfox.id.au',
+	'6.syllabear.us.to',
+	'bcseed.syllabear.us.to'
   ],
-  defaultClientPort: 8333
+  defaultClientPort: 15714
 };
 
 exports.mainnet = exports.livenet;
