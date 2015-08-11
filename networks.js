@@ -7,30 +7,26 @@ var hex = function(hex) {
 exports.livenet = {
   name: 'livenet',
   magic: hex('70352205'),
-  addressVersion: 0x19,
-  privKeyVersion: 153,
+  addressVersion: 0x3e,
+  privKeyVersion: 190,
   P2SHVersion: 85,
   hkeyPublicVersion: 0x0488b21e,
   hkeyPrivateVersion: 0x0488ade4,
   genesisBlock: {
-    hash: hex('000001FAEF25DEC4FBCF906E6242621DF2C183BF232F263D0BA5B101911E4563'),
-    merkle_root: hex('12630D16A97F24B287C8C2594DDA5FB98C9E6C70FC61D44191931EA2AA08DC90'),
+    hash: hex('000005a247b397eadfefa58e872bc967c2614797bdc8d4d0e6b09fea5c191599'),
+    merkle_root: hex('5109d5782a26e6a5a5eb76c7867f3e8ddae2bff026632c36afec5dc32ed8ce9f'),
     height: 0,
-    nonce: 164482,
+    nonce: 130208,
     version: 1,
     prev_hash: buffertools.fill(new Buffer(32), 0),
-    timestamp: 1393221600,
+    timestamp: 1413033777,
     bits: 504365055,
   },
   dnsSeeds: [
-    'rat4.blackcoin.co',
-	'seed.blackcoin.co',
-	'archon.darkfox.id.au',
-	'foxy.seeds.darkfox.id.au',
-	'6.syllabear.us.to',
-	'bcseed.syllabear.us.to'
+    'node.gridcoin.us',
+    'gridcoin.asia'
   ],
-  defaultClientPort: 15714
+  defaultClientPort: 32749
 };
 
 exports.mainnet = exports.livenet;
